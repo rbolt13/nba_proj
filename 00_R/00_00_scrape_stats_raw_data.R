@@ -15,7 +15,7 @@
 #' @return RDSfile of stats data.
 
 # location of this file 
-here::i_am("R/00_00_scrape_stats_raw_data.R")
+here::i_am("00_R/00_00_scrape_stats_raw_data.R")
 
 # libraries 
 library(magrittr)
@@ -47,7 +47,7 @@ ttl_stat <- url %>%
 raw_data <- list(ttl_stat)
 
 # location of raw data 
-location_of_raw_data <- here::here("raw_data",
+location_of_raw_data <- here::here("01_raw_data",
                                    "raw_data_stats.rds")
 
 # save data

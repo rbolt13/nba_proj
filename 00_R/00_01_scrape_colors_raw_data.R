@@ -8,7 +8,7 @@
 #' @retrun a .rds file with the raw data for colors. 
 
 # location of this file 
-here::i_am("R/00_01_scrape_colors_raw_data.R")
+here::i_am("00_R/00_01_scrape_colors_raw_data.R")
 
 # libraries 
 library(magrittr)
@@ -22,8 +22,6 @@ if(which_team == "blazers"){
   col_slug <- "portland-trailblazers"
 }else if(which_team == "nets"){
   col_slug <- "brooklyn-nets"
-}else{
-  col_slug <- "portland-trailblazers"
 }
 
 # url 
@@ -36,10 +34,10 @@ cols_tb <- url %>%
   html_table()
 
 # location of colors raw data
-location_of_raw_data_colors <- here::here("raw_data",
+location_of_raw_data_colors <- here::here("01_raw_data",
                                           "raw_data_colors.rds")
 
 # save data
-base::saveRDS(raw_data, location_of_raw_data_colors)
+base::saveRDS(cols_tb, location_of_raw_data_colors)
 
 
