@@ -64,6 +64,9 @@ base::names(colors_table)[2] <- "hex"
 # subset just the hex 
 hex_codes <- colors_table$hex
 
+# removed white as an option bc graph background is white
+hex_codes <- subset(hex_codes, hex_codes != "#000000")
+
 # color palette 
 col_pal <- colorRampPalette(hex_codes)(length(subset_data$Name))
 ```

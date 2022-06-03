@@ -33,7 +33,7 @@ location_of_labels_raw <- here::here("01_raw_data",
                                      "raw_data_labels.rds")
 
 # load data 
-colors <- base::readRDS(location_of_colors_raw)
+colors_table <- base::readRDS(location_of_colors_raw)
 ttl_stat <- base::readRDS(location_of_stats_raw)
 labels <- base::readRDS(location_of_labels_raw)
 
@@ -62,14 +62,14 @@ subset_data <- subset_data %>%
   dplyr::filter(stat >= base::unname(stats::quantile(subset_data$stat))[4])
 
 # clean colors data ---------------------------------
-# subset to df 17 
-colors_table <- colors[[17]]
-
 # rename column 2 to "hex"
 base::names(colors_table)[2] <- "hex"
 
 # subset just the hex 
 hex_codes <- colors_table$hex
+
+# removed white as an option bc graph background is white
+hex_codes <- subset(hex_codes, hex_codes != "#FFFFFF")
 
 # color palette 
 col_pal <- colorRampPalette(hex_codes)(length(subset_data$Name))

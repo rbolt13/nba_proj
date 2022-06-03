@@ -4,6 +4,7 @@ FROM rocker/tidyverse
 RUN Rscript -e "install.packages('devtools')"
 Run Rscript -e "devtools::install_github('rbolt13/NBAcharts')"
 Run Rscript -e "install.packages('here')"
+Run Rscript -e "install.packages('rvest')"
 
 # proj directory in container 
 RUN mkdir /nba_proj

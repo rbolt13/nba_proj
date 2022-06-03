@@ -29,6 +29,10 @@ if(which_team == "blazers"){
   slug <- "POR"
 }else if(which_team == "nets"){
   slug <- "BRK"
+}else if(which_team == "hornets"){
+  slug <- "CHO"
+}else if(which_team == "suns"){
+  slug <- "PHO"
 }else{
   slug <- "POR"
 }

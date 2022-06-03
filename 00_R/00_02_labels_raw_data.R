@@ -21,6 +21,12 @@ if(which_team == "blazers"){
   team_name <- "Portland Trail Blazers"
 }else if(which_team == "nets"){
   team_name <- "Brooklyn Nets"
+}else if(which_team == "hornets"){
+  team_name <- "Charlotte Hornets"
+}else if(which_team == "suns"){
+  team_name <- "Phoenix Suns"
+}else{
+  team_name <- "Portland Trail Blazers"
 }
 
 # description 
