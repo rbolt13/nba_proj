@@ -62,8 +62,8 @@ base::names(colors_table)[2] <- "hex"
 # subset just the hex 
 hex_codes <- colors_table$hex
 
-# color pallete 
-col_pal <- colorRampPalette(hex_codes)(length(subset_data))
+# color palette 
+col_pal <- colorRampPalette(hex_codes)(length(subset_data$Name))
 
 # save data ------------------------------------------
 # Put all data into one list 

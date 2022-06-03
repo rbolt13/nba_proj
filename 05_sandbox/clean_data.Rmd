@@ -28,6 +28,9 @@ ttl_stat <- base::readRDS(location_of_stats_raw)
 ```
 
 ```{r}
+# load data 
+colors <- base::readRDS(location_of_colors_raw)
+ttl_stat <- base::readRDS(location_of_stats_raw)
 # clean stat data -----------------------------------
 # subset dataframe 
 ttl_stat <- ttl_stat[[1]]
@@ -49,6 +52,8 @@ subset_data <- ttl_stat %>%
 subset_data <- subset_data %>%
   dplyr::filter(stat >= base::unname(stats::quantile(subset_data$stat)))
 
+subset_data
+
 # clean colors data ---------------------------------
 # subset to df 17 
 colors_table <- colors[[17]]
@@ -59,9 +64,11 @@ base::names(colors_table)[2] <- "hex"
 # subset just the hex 
 hex_codes <- colors_table$hex
 
-# color pallete 
-col_pal <- colorRampPalette(hex_codes)(length(subset_data))
+# color palette 
+col_pal <- colorRampPalette(hex_codes)(length(subset_data$Name))
 ```
+
+
 
 
 
