@@ -1,5 +1,5 @@
 # Instructions
-For this repository and run code from terminal to reproduce this analysis. 
+Fork this repository and run code from terminal to reproduce this analysis. 
 
 # nba_proj
 This project was created by [Randi Bolt](https://www.rbolt.me/). 
