@@ -30,14 +30,15 @@ Available teams: blazers, nets, hornets, suns
 
 Available stats: 
 
-stat | description 
--------------------
-Age | age (on Feb 1st of season)
-G | games 
-GS | games started 
-MP | minutes played
-FG | field goals 
+| Stat        | Description     |
+| ----------- | --------------- |
+| Age         | age (on Feb 1st)|
+| G           | games           |
+| GS          | games started   |
+| MP          | minutes played  |
+| FG          | field goals     |
 
+and more available [here](https://www.basketball-reference.com/about/glossary.html).
 
 ## Getting Started 
 
