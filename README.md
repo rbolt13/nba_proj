@@ -46,4 +46,8 @@ and more available [here](https://www.basketball-reference.com/about/glossary.ht
 
 2. Open docker container. 
 
+```
+docker build -t nba_proj . 
+```
+
 3. View report.html in output folder. 
