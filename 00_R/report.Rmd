@@ -1,5 +1,5 @@
 ---
-title: "circular barplots"
+title: "Report"
 author: "Randi Bolt"
 date: "6/3/2022"
 output: html_document
@@ -8,10 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 # location of this file
-here::i_am("05_sandbox/circ_barchart.Rmd")
-```
-
-```{r}
+here::i_am("00_R/report.Rmd")
 # libaraies
 library(NBAcharts)
 library(plyr)
@@ -23,9 +20,6 @@ clean_data <- base::readRDS(location_of_clean_data)[[1]]
 colors <- base::readRDS(location_of_clean_data)[[2]]
 labels <- base::readRDS(location_of_clean_data)[[3]]
 ring_labels <- base::readRDS(location_of_clean_data)[[4]]
-```
-
-```{r}
 # circ barplot
 x <- circ_col_chart(player_data = clean_data,
                ring_scale = ring_labels[[1]],
@@ -40,15 +34,10 @@ x <- circ_col_chart(player_data = clean_data,
                chart_subtitle = labels[[2]],
                chart_source = labels[[3]],
                cc_chart_filename = c("../03_figs/barchart.png"))
-x
 ```
 
-```{r}
+```{r, echo=FALSE}
 x
 ```
-
-
-
-
 
 
