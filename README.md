@@ -50,4 +50,12 @@ and more available [here](https://www.basketball-reference.com/about/glossary.ht
 docker build -t nba_proj . 
 ```
 
+```
+docker run -it nba_proj /bin/bash
+```
+
+```
+docker run -v ~/path/to/nba_proj:/nba_proj -it nba_proj
+```
+
 3. View report.html in output folder. 
