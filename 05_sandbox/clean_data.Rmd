@@ -50,7 +50,7 @@ subset_data <- ttl_stat %>%
 
 # select top 25% of players in this area
 subset_data <- subset_data %>%
-  dplyr::filter(stat >= base::unname(stats::quantile(subset_data$stat)))
+  dplyr::filter(stat >= base::unname(stats::quantile(subset_data$stat))[4])
 
 subset_data
 
@@ -67,6 +67,45 @@ hex_codes <- colors_table$hex
 # color palette 
 col_pal <- colorRampPalette(hex_codes)(length(subset_data$Name))
 ```
+
+```{r if else ring labels}
+max_stat <- .55
+
+if(max_stat > 50){
+  ring_scale <- plyr::round_any(max_stat/3, 10)
+  ring_inner <- ring_scale + 10
+  ring_middle <- 2*ring_scale + 10 
+  ring_outer <- 3*ring_scale + 10
+  ringlab_inner <- base::as.character(ring_scale)
+  ringlab_middle <- base::as.character(2*ring_scale)
+  ringlab_outer <- base::as.character(3*ring_scale)
+}else if(max_stat <= 50 && max_stat > 10){
+  ring_scale <- plyr::round_any(max_stat/3, 1)
+  ring_inner <- ring_scale + 5
+  ring_middle <- 2*ring_scale + 5 
+  ring_outer <- 3*ring_scale + 5
+  ringlab_inner <- base::as.character(ring_scale)
+  ringlab_middle <- base::as.character(2*ring_scale)
+  ringlab_outer <- base::as.character(3*ring_scale)
+}else if(max_stat <= 10 && max_stat > 1){
+  ring_scale <- plyr::round_any(max_stat/3, .1)
+  ring_inner <- ring_scale + 2
+  ring_middle <- 2*ring_scale + 2 
+  ring_outer <- 3*ring_scale + 2
+  ringlab_inner <- base::as.character(ring_scale)
+  ringlab_middle <- base::as.character(2*ring_scale)
+  ringlab_outer <- base::as.character(3*ring_scale)
+}else if(max_stat <= 1){
+  ring_scale <- plyr::round_any(max_stat/3, .05)
+  ring_inner <- ring_scale + .05
+  ring_middle <- 2*ring_scale + .05 
+  ring_outer <- 3*ring_scale + .05
+  ringlab_inner <- base::as.character(ring_scale)
+  ringlab_middle <- base::as.character(2*ring_scale)
+  ringlab_outer <- base::as.character(3*ring_scale)
+}
+```
+
 
 
 

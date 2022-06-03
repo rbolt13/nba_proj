@@ -1,20 +1,17 @@
-#' Barplot 
-#' 
-#' @description this file uses 02_clean_data/clean_data.rds
-#' to create circular barplots. 
-#' 
-#' @param clean_data.rds includes: 
-#' 1. subset data with "player" and "data" as column headers. 
-#' 2. color pallette 
-#' 3. labels which inclues: team name, subtitle, caption. 
-#' 4. ring labales: ring scales 
-#' and can be found: 00_R/01_00_clean_data.R. 
-#' 
-#' @return a .png barchat in the figs folder. 
+---
+title: "circular barplots"
+author: "Randi Bolt"
+date: "6/3/2022"
+output: html_document
+---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 # location of this file
-here::i_am("00_R/02_00_barplot.R")
+here::i_am("05_sandbox/circ_barchart.Rmd")
+```
 
+```{r}
 # libaraies
 library(NBAcharts)
 library(plyr)
@@ -22,12 +19,23 @@ library(plyr)
 location_of_clean_data <- here::here("02_clean_data",
                                      "clean_data.rds")
 # load data 
-clean_data <- base::readRDS(location_of_clean_data)[[1]]
+load_data <- base::readRDS(location_of_clean_data)
 colors <- base::readRDS(location_of_clean_data)[[2]]
 labels <- base::readRDS(location_of_clean_data)[[3]]
 ring_labels <- base::readRDS(location_of_clean_data)[[4]]
+clean_data <- base::readRDS(location_of_clean_data)[[1]]
+```
 
-# circ_col_chart
+
+```{r}
+clean_data
+colors
+labels
+ring_labels
+```
+
+```{r}
+
 circ_col_chart(player_data = clean_data,
                ring_scale = ring_labels[[1]],
                ring_inner = ring_labels[[2]],
@@ -40,4 +48,11 @@ circ_col_chart(player_data = clean_data,
                chart_title = labels[[1]],
                chart_subtitle = labels[[2]],
                chart_source = labels[[3]],
-               cc_chart_filename = c("../03_figs/barchart.png"))
+               cc_chart_filename = c("../03_figs/test_barchart.png"))
+
+```
+
+
+
+
+

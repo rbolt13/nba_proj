@@ -35,7 +35,6 @@ caption <- paste0("\n\n Data Visualisation by Randi Bolt\n https://www.rbolt.me/
 # put all variables in one list 
 labels_raw_data <- list(team_name,
                         description,
-                        date_today,
                         caption)
 
 # location of raw data 
