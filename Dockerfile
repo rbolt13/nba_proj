@@ -3,6 +3,7 @@ FROM rocker/tidyverse
 # install R packages 
 RUN Rscript -e "install.packages('devtools')"
 Run Rscript -e "devtools::install_github('rbolt13/NBAcharts')"
+Run Rscript -e "install.packages('here')"
 
 # proj directory in container 
 RUN mkdir /nba_proj
@@ -22,3 +23,6 @@ WORKDIR /nba_proj
 
 # make container entery point bash
 CMD make report
+
+# says hello to 
+CMD echo "Hello from your container!"
