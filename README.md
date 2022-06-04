@@ -59,7 +59,7 @@ docker run -v .:/nba_proj -it nba_proj
 ```
 
 ```
-docker run -v ~/Desktop/2022/NBA_Playhouse/nba_proj:/nba_proj -it nba_proj
+docker run -v ~/path/to/folder/nba_proj:/nba_proj -it nba_proj
 ```
 
 3. View report.html in output folder. 
