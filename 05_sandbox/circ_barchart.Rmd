@@ -14,7 +14,7 @@ here::i_am("05_sandbox/circ_barchart.Rmd")
 ```{r}
 # libaraies
 library(NBAcharts)
-library(plyr)
+library(dplyr)
 # location of data 
 location_of_clean_data <- here::here("02_clean_data",
                                      "clean_data.rds")

@@ -1,0 +1,10 @@
+version: "3.5"
+services:
+  nba_proj:
+    environment:
+      - which_team="blazers"
+      - which_stat="PTS"
+    build:
+      context: .
+    volumes:
+    - .:/nba_proj

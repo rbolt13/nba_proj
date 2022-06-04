@@ -22,7 +22,11 @@ ENV which_stat="PTS"
 # make nba_proj the working directory 
 WORKDIR /nba_proj 
 
-# make container entery point bash
+# make report
+CMD make raw_data/stats
+CMD make raw_data/colors
+CMD make raw_data/labels
+CMD make clean_data/raw_data
 CMD make report
 
 # says hello to 
