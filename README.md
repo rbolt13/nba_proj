@@ -1,5 +1,5 @@
 # Instructions
-For this repository and run code from terminal to reproduce this analysis. 
+Fork this repository and run code from terminal to reproduce this analysis. 
 
 # nba_proj
 This project was created by [Randi Bolt](https://www.rbolt.me/). 
@@ -45,5 +45,21 @@ and more available [here](https://www.basketball-reference.com/about/glossary.ht
 1. Clone this repo. 
 
 2. Open docker container. 
+
+```
+docker build -t nba_proj . 
+```
+
+```
+docker run -it nba_proj /bin/bash
+```
+
+```
+docker run -v .:/nba_proj -it nba_proj
+```
+
+```
+docker run -v ~/path/to/folder/nba_proj:/nba_proj -it nba_proj
+```
 
 3. View report.html in output folder. 
