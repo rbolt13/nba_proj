@@ -55,7 +55,7 @@ docker run -it nba_proj /bin/bash
 ```
 
 ```
-docker run -v ~/path/to/nba_proj:/nba_proj -it nba_proj
+docker run -v .:/nba_proj -it nba_proj
 ```
 
 3. View report.html in output folder. 
